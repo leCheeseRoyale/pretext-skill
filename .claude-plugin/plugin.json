@@ -1,0 +1,5 @@
+{
+  "name": "pretext",
+  "description": "Skill for building with @chenglou/pretext — a pure TypeScript text measurement & layout engine that bypasses DOM reflows",
+  "version": "1.0.0"
+}
