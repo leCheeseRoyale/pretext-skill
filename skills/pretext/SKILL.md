@@ -18,6 +18,29 @@ Pretext uses the browser's native font engine (via a hidden canvas `measureText`
 
 **Key insight**: Text layout was the last major bottleneck preventing truly dynamic UIs. DOM read/write interleaving destroys performance and wrecks component boundaries. Pretext removes this bottleneck entirely.
 
+## Why Pretext Matters (The Problem It Solves)
+
+Every time a page needs to figure out how many lines a paragraph wraps into, how tall a text box should be, or whether text fits inside a changing column or bubble, the browser does an expensive **layout reflow** — stopping everything, rearranging the entire document just to measure one element. This gets slow fast with hundreds of text blocks, real-time resizing, or smooth animations.
+
+**Old way**: Every text measurement is like asking the whole house to stop and rearrange itself to check one room's size.
+**Pretext way**: You scan the blueprint once, then do all future measurements with a pocket calculator in a split second — no rearranging needed.
+
+### What This Unlocks
+
+1. **No more beauty vs. performance trade-off** — Rich, perfectly wrapped, multi-language text (Arabic, Chinese, emojis, mixed directions) works inside physics simulations, zooming canvases, or animated scenes without slowing down.
+
+2. **New interface patterns become practical**:
+   - Masonry/Pinterest grids with perfectly fitted variable-height cards — no lag or hacks
+   - Chat bubbles that perfectly shrinkwrap to content
+   - Magazine-style layouts where text flows around draggable images in real time
+   - Physics-based or generative UIs — text blocks that bounce, float, or react to input while staying perfectly legible
+
+3. **Cleaner architecture** — Text becomes a predictable, fast data operation instead of a slow visual one. No more mixing measuring and rendering in messy ways that break component boundaries.
+
+4. **AI-ready** — Cheap, deterministic measurements let AI tools rapidly test thousands of possible layouts, auto-generate UIs, or dynamically adapt text in real time as content is created on the fly.
+
+Pretext doesn't replace CSS for everything, but it turns text from a performance villain into a creative superpower — opening the door to more imaginative, dynamic, and performant front-ends.
+
 ## Installation
 
 ```bash
